@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ChangePasswordRequest;
 use App\Models\Users;
+use App\Models\Appointment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -60,6 +61,28 @@ class adminController extends Controller
 
         if ($result) {
             return response()->json($result, 200);
+        }
+    }
+    //all appointmes
+    public function Allappointment(Request $req)
+    {
+        return Appointment::all();
+
+        // if ($result) {
+        //      return response()->json($result, 200);
+            
+        // }
+    }
+    //dlt appoitnmnt
+    //delet patient
+    public function Deleteappointment(Request $req)
+    {
+        $result = Appointment::where('id', $req->id)->first();
+
+        if ($result->delete()) {
+            return response()->json(["success" => "  Delete Succesfull"], 200);
+        } else {
+            return response()->json(["msg" => "notfound"], 404);
         }
     }
     //al patient

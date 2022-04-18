@@ -18,7 +18,7 @@ class LoginController extends Controller {
         if ( $result  )
         {
 
-                if ( $result->type == "doctor" ) {
+                if ( $result->type == "admin" ) {
 
                     return response()->json([
                         'status' => 'success',
@@ -42,15 +42,7 @@ class LoginController extends Controller {
 
                 //     //admin
                 // }
-                // else if ( $type == "admin" ) {
-                //     $req->session()->put( 'uname', $username );
-                //     $req->session()->put( 'type', $type );
-                //     $req->session()->put( 'password', $req->password );
-                //     $req->session()->put( 'id', $id );
-                //     $req->session()->put( 'image', $image );
-
-                //     return redirect()->route( 'admin.dashboard' );
-                // }
+                
 
 
 

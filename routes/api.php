@@ -24,6 +24,8 @@ Route::middleware( 'auth:api' )->get( '/user', function ( Request $request ) {
     Route::post( '/login', [LoginController::class,'verify'] );
     //alldoctor
     Route::get( '/alldoctor', [adminController::class,'alldoctor'] );
+    Route::get( '/allappointment', [adminController::class,'Allappointment'] );
+    Route::post( '/dltappointment/{id}', [adminController::class,'Deleteappointment'] );
     Route::get( '/allpatient', [adminController::class,'allpatient'] );
     Route::post( '/deletepatient/{id}', [adminController::class,'deletepatient'] );
     //add doctor
