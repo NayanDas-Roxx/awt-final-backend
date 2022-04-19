@@ -32,6 +32,12 @@ class LoginController extends Controller {
 
                     ]);
                 }
+                else {
+                    return response()->json([
+                        'status' => 'Not Found',
+                        'message' => 'User Not  Found',
+                    ]);
+                }
                 // else if ( $type == "receptionist" ) {
                 //     // $req->session()->put( 'uname', $username );
                 //     // $req->session()->put( 'type', $type );
